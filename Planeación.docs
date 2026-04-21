@@ -1,14 +1,15 @@
-Programa tipo match con 8 arreglos
+Programa tipo match con 12 arreglos
   Arreglos:
   1.- Nombre
   2.- Edad
-  3.- Signo sodiacal
+  3.- Signo zodiacal: (Aries,Tauro,Géminis,Cánceer,Leo,Virgo,Libra,Escorpion,Sagitario,Capricornio,Acuario, y Piscis
   4.- Altura
-  5.- Licenciatura (escuela)
-  6.- Hobbys
-  7.- Tipo de personalidad
-  8.- Preferencia sexual 
-  9.- Género
-  10.- Preferencia de chilaquiles  
-  11.- Mascotas
-  12.- Prototipo de vida
+  5.- Escuela a la que perteneces: Ingenieria, Negocios y Economía,Ciencias,Artes y Humanidades,  y Ciencias sociales)
+  6.- Hobbys: Aficiones de interior (Leer,manualidades, y escritura), Actividades deportivas (Senderismo, Gym, deportes en equipo),Vida nocturna (Salir de fiesta, alcohol,bailar)
+  7.- Tipo de personalidad (Introvertido, Ambivertido,y Extrovertido)
+  8.- Preferencia sexual (Chico, Chica, Irrelevante)
+  9.- Género (Homre, mujer, y no binario)
+  10.- Preferencia de chilaquiles: Rojos, verdes y bandera
+  11.- Mascotas (Es muy importante tener mascota,Me da igual, no puedo, o no me gustan.
+  12.- Prototipo de vida ¿Qué es más importante para ti? Éxito deportivo, Formar  una familia, y éxito profesional.
+
