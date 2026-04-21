@@ -13,3 +13,14 @@ Programa tipo match con 12 arreglos
   11.- Mascotas (Es muy importante tener mascota,Me da igual, no puedo, o no me gustan.
   12.- Prototipo de vida ¿Qué es más importante para ti? Éxito deportivo, Formar  una familia, y éxito profesional.
 
+Funciones:
+  1. Checar signo zodiacal
+  2. checar escuela 
+  3. checar hobby
+  4. checar tipo de personalidad
+  5. checar género y preferencia sexual
+  6. checar preferencia de chilaquiles
+  7. checar mascotas
+  8. checar prototipo de vida
+  9. sume los puntos de cada función de chequeo 
+  10. dar el top 5 de las personas que tienes mayor puntaje de match y dar sus datos
