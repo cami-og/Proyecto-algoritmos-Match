@@ -2,10 +2,10 @@ Programa tipo match con 12 arreglos
   Arreglos:
   1.- Nombre
   2.- Edad
-  3.- Signo zodiacal: (Aries,Tauro,Géminis,Cánceer,Leo,Virgo,Libra,Escorpion,Sagitario,Capricornio,Acuario, y Piscis
+  3.- Espiritualidad ¿Consideras que es importante la espiritualiad en tu pareja? Sí, No, me  es irrelevante 
   4.- Altura
   5.- Escuela a la que perteneces: Ingenieria, Negocios y Economía,Ciencias,Artes y Humanidades,  y Ciencias sociales)
-  6.- Hobbys: Aficiones de interior (Leer,manualidades, y escritura), Actividades deportivas (Senderismo, Gym, deportes en equipo),Vida nocturna (Salir de fiesta, alcohol,bailar)
+  6.- Hobbys: Aficiones de interior (Leer,manualidades, y escritura), Actividades deportivas (Senderismo, Gym, deportes en equipo),Vida nocturna (Salir de fiesta, alcohol,bailar), Sí a todo (todas las anteriores)
   7.- Tipo de personalidad (Introvertido, Ambivertido,y Extrovertido)
   8.- Preferencia sexual (Chico, Chica, Irrelevante)
   9.- Género (Homre, mujer, y no binario)
@@ -14,7 +14,7 @@ Programa tipo match con 12 arreglos
   12.- Prototipo de vida ¿Qué es más importante para ti? Éxito deportivo, Formar  una familia, y éxito profesional.
 
 Funciones:
-  1. Checar signo zodiacal
+  1. Checar Espiritualidad
   2. checar escuela 
   3. checar hobby
   4. checar tipo de personalidad
@@ -23,4 +23,4 @@ Funciones:
   7. checar mascotas
   8. checar prototipo de vida
   9. sume los puntos de cada función de chequeo 
-  10. dar el top 5 de las personas que tienes mayor puntaje de match y dar sus datos
+  10. dar el top 5 de las personas que tienes mayor puntaje de match y dar sus datos.
