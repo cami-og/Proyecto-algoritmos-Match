@@ -3,15 +3,18 @@ Programa tipo match con 12 arreglos
   1.- Nombre
   2.- Edad
   3.- Espiritualidad ¿Consideras que es importante la espiritualiad en tu pareja? Sí, No, me  es irrelevante 
+      -si-> 1
+      -no-> 2
+      -irrelevante-> 3
   4.- Altura
-  5.- Escuela a la que perteneces: Ingenieria, Negocios y Economía,Ciencias,Artes y Humanidades,  y Ciencias sociales)
-  6.- Hobbys: Aficiones de interior (Leer,manualidades, y escritura), Actividades deportivas (Senderismo, Gym, deportes en equipo),Vida nocturna (Salir de fiesta, alcohol,bailar), Sí a todo (todas las anteriores)
-  7.- Tipo de personalidad (Introvertido, Ambivertido,y Extrovertido)
-  8.- Preferencia sexual (Chico, Chica, Irrelevante)
-  9.- Género (Homre, mujer, y no binario)
-  10.- Preferencia de chilaquiles: Rojos, verdes y bandera
-  11.- Mascotas (Es muy importante tener mascota,Me da igual, no puedo, o no me gustan.
-  12.- Prototipo de vida ¿Qué es más importante para ti? Éxito deportivo, Formar  una familia, y éxito profesional.
+  5.- Escuela a la que perteneces: Ingenieria (1), Negocios y Economía (2),Ciencias (3),Artes y Humanidades (4),  y Ciencias sociales(5))
+  6.- Hobbys: Aficiones de interior (Leer,manualidades, y escritura) (1), Actividades deportivas (Senderismo, Gym, deportes en equipo)(2),Vida nocturna (Salir de fiesta, alcohol,bailar)(3), Sí a todo (todas las anteriores)(4)
+  7.- Tipo de personalidad (Introvertido (1), Ambivertido (2),y Extrovertido (3))
+  8.- Preferencia sexual (Chico (1), Chica (2), Irrelevante(3))
+  9.- Género (Homre (1), mujer (2), y no binario(3))
+  10.- Preferencia de chilaquiles: Rojos (1), verdes (2) y bandera (3)
+  11.- Mascotas (Es muy importante tener mascota (1),Me da igual (2), no puedo, o no me gustan (3).
+  12.- Prototipo de vida ¿Qué es más importante para ti? Éxito deportivo(1), Formar  una familia(2), y éxito profesional(3).
 
 Funciones:
   1. Checar Espiritualidad
