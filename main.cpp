@@ -35,10 +35,10 @@ int main() {
     // 10. Chilaquiles (Convertido a enteros: Rojos=1, Verdes=2, Bandera=3, No gustan=4)
     int pchilaquiles[] = {2,1,2,2,2,2,2,2,1,1,2,1,2,1,1,2,3,2,2,2,2,2,1,1,4,2,2};
     
-    // 11. Mascotas
+    // 11. Importancia de Mascotas
     int mascotas[] = {1,2,1,2,1,1,1,1,1,2,2,1,1,1,2,1,1,1,1,2,2,3,1,2,2,1,2};
     
-    // 12. Vida
+    // 12. Prototipo de Vida
     int vida[] = {2,3,3,3,2,2,3,2,2,3,2,2,3,3,2,3,3,3,3,3,3,3,1,3,3,2,3};
 
     // Calculamos dinámicamente el número de personas (27)
