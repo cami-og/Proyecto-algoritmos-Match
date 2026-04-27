@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 //Prototipos
-
+void imprimirDatos(char [][10], int [], int [],  int [],  int [],  int [],  int [], int [],   int [],  int [],  int [],   int [])
 
 int main{
   char nombres[][10]={"Camila","Dani","Fernanda","Ricardo","Valentina","Angel","Carolina","Emiliano","Sara","Ashley","Emiliano","Irwing","Luis","Daniela","Alondra","Luis","Hannah","Aimeé","Hana","Fernanda","Fernanda","Emmanuel","Edwin","Elihu","Amanda","Omar","Elizabeth"," "," "," "};
@@ -18,5 +18,14 @@ int main{
   int pchilaquiles[]={"verdes","rojos","verdes","verdes","verdes","verdes","verdes","verdes","rojos","rojos","verdes","rojos","verdes","rojos","rojos","verdes","bandera","verdes","verdes","verdes","verdes","verdes","rojos","rojos","no me gustan","verdes","verdes",};
   int mascotas[]={1,2,1,2,1,1,1,1,1,2,2,1,1,1,2,1,1,1,1,2,2,3,1,2,2,1,2};
   int vida[]={2,3,3,3,2,2,3,2,2,3,2,2,3,3,2,3,3,3,3,3,3,3,1,3,3,2,3}
+
+  
 }
 
+void imprimirDatos(char nombres[][10], int edad[], int espiritualidad[],  int altura[],  int escuela[],  int hobby[],  int personalidad[], int psexual[],   int genero[],  int pchilaquiles[],  int mascotas[],   int vida[]){
+     int k;	
+	for (k=0;k<27;k++)
+	{
+		printf("%s nacido en %s tiene %d años y mide %0.2f m\n",n[k],p[k],e[k], h[k]);
+	}		
+}
