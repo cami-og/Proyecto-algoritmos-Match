@@ -8,7 +8,7 @@ void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], float 
 int main() {
 	int opcion;
     // 1. Nombres (Aumenté el tamaño a 20 para evitar desbordamientos de nombres largos)
-    char nombres[][20] = {"Camila","Dani","Fernanda","Ricardo","Valentina","Angel","Carolina","Emiliano","Sara","Ashley","Emiliano","Irwing","Luis","Daniela","Alondra","Luis","Hannah","Aimeé","Hana","Fernanda","Fernanda","Emmanuel","Edwin","Elihu","Amanda","Omar","Elizabeth","Nancy","LuiZ Paulo","Iker","Emilio"};
+    char nombres[][20] = {"Camila","Dani","Fernanda","Ricardo","Valentina","Angel","Carolina","Emiliano O","Sara","Ashley","Emiliano S","Irwing","Luis","Daniela","Alondra","Luis","Hannah","Aimeé","Hana","Fernanda","Fernanda","Emmanuel","Edwin","Elihu","Amanda","Omar","Elizabeth","Nancy","LuiZ Paulo","Iker","Emilio"};
     // 2. Edad
     int edad[] = {18,20,19,21,21,19,19,21,18,18,21,26,16,18,18,24,24,18,18,18,18,19,26,23,19,20,18,23,23,21,22};
     // 3. Espiritualidad
