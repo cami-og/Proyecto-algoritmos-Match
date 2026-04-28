@@ -3,7 +3,7 @@
 
 // Prototipo de la función
 void imprimirDatos(char nombres[][20], int edad[], int espiritualidad[], float altura[], int escuela[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int mascotas[], int vida[], int totalPersonas);
-void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int vida[], int totalPersonas);
+void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], float altura[], int escuela[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int mascotas[], int vida[], int totalPersonas);
 
 int main() {
 	int opcion;
@@ -48,7 +48,7 @@ int main() {
             imprimirDatos(nombres, edad, espiritualidad, altura, escuela, hobby, personalidad, psexual, genero, pchilaquiles, mascotas, vida, totalPersonas);
 			break;
 		case 2:
-            algoritmoMatch(nombres, edad, espiritualidad, hobby, personalidad, psexual, genero, pchilaquiles, vida, totalPersonas);
+            algoritmoMatch(nombres, edad, espiritualidad, altura, escuela, hobby, personalidad, psexual, genero, pchilaquiles, mascotas, vida, totalPersonas);
 			break;
 		case 3: 
 			printf("¡Suerte en el amor! Adiós.\n");
@@ -96,9 +96,21 @@ void imprimirDatos(char nombres[][20], int edad[], int espiritualidad[], float a
 }
 
 //Función de match
-void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int vida[], int totalPersonas) {
-    int uGenero, uBusca, uEdadMin, uEdadMax, uEspiritu, uHobby, uPerso, uChila, uVida;
+//Función de match
+void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], float altura[], int escuela[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int mascotas[], int vida[], int totalPersonas) {
+    int uGenero, uBusca, uEdadMin, uEdadMax, uEspiritu, uHobby, uPerso, uChila, uVida, uMascotas;
     int puntajes[31] = {0}; // Guardaremos los puntos de cada persona
+
+    // Diccionarios para imprimir los perfiles ganadores
+    const char *strEspiritualidad[] = {"", "Sí es importante", "No es importante", "Me es irrelevante"};
+    const char *strEscuela[] = {"", "Ingeniería", "Negocios y Economía", "Ciencias", "Artes y Humanidades", "Ciencias sociales"};
+    const char *strHobby[] = {"", "Aficiones de interior", "Actividades deportivas", "Vida nocturna", "Sí a todo"};
+    const char *strPersonalidad[] = {"", "Introvertido", "Ambivertido", "Extrovertido"};
+    const char *strPsexual[] = {"", "Chico", "Chica", "Irrelevante"};
+    const char *strGenero[] = {"", "Hombre", "Mujer", "No binario"};
+    const char *strChilaquiles[] = {"", "Rojos", "Verdes", "Bandera", "No me gustan"};
+    const char *strMascotas[] = {"", "Muy importante", "Me da igual", "No puedo / No me gustan"};
+    const char *strVida[] = {"", "Éxito deportivo", "Formar una familia", "Éxito profesional"};
 
     // --- CAPTURA DE DATOS DEL USUARIO ---
     printf("\n--- CONFIGURA TU PERFIL ---");
@@ -108,15 +120,14 @@ void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], int ho
     printf("Rango de edad (Max): "); scanf("%d", &uEdadMax);
     printf("Espiritualidad (1:Si, 2:No, 3:Irrelevante): "); scanf("%d", &uEspiritu);
     printf("Personalidad (1:Intro, 2:Ambi, 3:Extro): "); scanf("%d", &uPerso);
-    printf("Hobby preferido (1-4): "); scanf("%d", &uHobby);
+    printf("Hobby preferido (1:Interior, 2:Deporte, 3:Noche, 4:Todo): "); scanf("%d", &uHobby);
     printf("Chilaquiles (1:Rojos, 2:Verdes, 3:Bandera, 4:No): "); scanf("%d", &uChila);
+    printf("Mascotas (1:Importante, 2:Da igual, 3:No gustan): "); scanf("%d", &uMascotas);
     printf("Prioridad de vida (1:Deporte, 2:Familia, 3:Profesional): "); scanf("%d", &uVida);
 
     // --- FASE A Y B: EVALUACIÓN ---
     for (int i = 0; i < totalPersonas; i++) {
         // FASE A: FILTROS ABSOLUTOS
-        // 1. Filtro Género/Preferencia (Bidireccional)
-        // El usuario busca X genero Y el perfil debe buscar el genero del usuario
         int matchGenero = 0;
         if (uBusca == 3 || uBusca == genero[i]) {
             if (psexual[i] == 3 || psexual[i] == uGenero) {
@@ -124,7 +135,6 @@ void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], int ho
             }
         }
         
-        // 2. Filtro Edad
         int matchEdad = (edad[i] >= uEdadMin && edad[i] <= uEdadMax);
 
         if (matchGenero && matchEdad) {
@@ -140,18 +150,23 @@ void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], int ho
             }
 
             if (hobby[i] == uHobby) puntajes[i] += 15;
+            if (mascotas[i] == uMascotas) puntajes[i] += 10; // Compatibilidad de mascotas
             if (pchilaquiles[i] == uChila) puntajes[i] += 5;
         } else {
-            puntajes[i] = 0; // No pasó los filtros
+            puntajes[i] = -1; // No pasó los filtros (-1 para evitar que gane con 0 puntos)
         }
     }
 
-    // --- BUSCAR LOS 3 MEJORES ---
-    printf("\n--- TUS TOP 3 MATCHES --- \n");
+    // --- BUSCAR Y MOSTRAR LOS 3 MEJORES ---
+    printf("\n========================================");
+    printf("\n        TUS 3 MEJORES MATCHES           ");
+    printf("\n========================================");
+    
     for (int top = 0; top < 3; top++) {
         int maxPuntos = -1;
         int mejorIndice = -1;
 
+        // Buscar al que tiene la mayor puntuación
         for (int i = 0; i < totalPersonas; i++) {
             if (puntajes[i] > maxPuntos) {
                 maxPuntos = puntajes[i];
@@ -159,13 +174,32 @@ void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], int ho
             }
         }
 
-        if (mejorIndice != -1 && maxPuntos > 0) {
-            printf("%d. %s - Compatibilidad: %d pts\n", top + 1, nombres[mejorIndice], maxPuntos);
-            puntajes[mejorIndice] = -1; // Lo "quitamos" para buscar el siguiente mejor
+        // Si encontramos a alguien válido
+        if (mejorIndice != -1 && maxPuntos >= 0) {
+            int k = mejorIndice; // Índice del ganador
+            
+            printf("\n\n>>> MATCH #%d | Compatibilidad: %d pts <<<\n", top + 1, maxPuntos);
+            printf("----------------------------------------\n");
+            printf(" PERFIL DE: %s\n", nombres[k]);
+            printf("----------------------------------------\n");
+            printf(" - Edad:                 %d años\n", edad[k]);
+            printf(" - Altura:               %.2f m\n", altura[k]);
+            printf(" - Género:               %s\n", strGenero[genero[k]]);
+            printf(" - Preferencia Sexual:   %s\n", strPsexual[psexual[k]]);
+            printf(" - Escuela:              %s\n", strEscuela[escuela[k]]);
+            printf(" - Personalidad:         %s\n", strPersonalidad[personalidad[k]]);
+            printf(" - Hobbies:              %s\n", strHobby[hobby[k]]);
+            printf(" - Espiritualidad:       %s\n", strEspiritualidad[espiritualidad[k]]);
+            printf(" - Chilaquiles:          %s\n", strChilaquiles[pchilaquiles[k]]);
+            printf(" - Mascotas:             %s\n", strMascotas[mascotas[k]]);
+            printf(" - Prioridad de vida:    %s\n", strVida[vida[k]]);
+            printf("----------------------------------------");
+            
+            puntajes[mejorIndice] = -2; // Lo descartamos para la siguiente iteración del top 3
         } else if (top == 0) {
-            printf("Lo siento, no hubo matches compatibles.\n");
+            printf("\nLo siento, no hubo personas que pasaran tus filtros estrictos de Edad o Género.\n");
             break;
         }
     }
+    printf("\n");
 }
-
