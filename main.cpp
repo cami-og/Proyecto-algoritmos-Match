@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+using namespace std;
 
 // Prototipo de la función
 void imprimirDatos(char nombres[][20], int edad[], int espiritualidad[], float altura[], int escuela[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int mascotas[], int vida[], int totalPersonas);
@@ -65,15 +66,15 @@ void imprimirDatos(char nombres[][20], int edad[], int espiritualidad[], float a
     
     // Diccionarios: Estos arreglos mapean el número (índice) a la palabra correspondiente.
     // El índice 0 está vacío ("") porque tus opciones empiezan desde el 1.
-    const char *strEspiritualidad[] = {"", "Sí es importante", "No es importante", "Me es irrelevante"};
-    const char *strEscuela[] = {"", "Ingeniería", "Negocios y Economía", "Ciencias", "Artes y Humanidades", "Ciencias sociales"};
-    const char *strHobby[] = {"", "Aficiones de interior", "Actividades deportivas", "Vida nocturna", "Sí a todo"};
-    const char *strPersonalidad[] = {"", "Introvertido", "Ambivertido", "Extrovertido"};
-    const char *strPsexual[] = {"", "Chico", "Chica", "Irrelevante"};
-    const char *strGenero[] = {"", "Hombre", "Mujer", "No binario"};
-    const char *strChilaquiles[] = {"", "Rojos", "Verdes", "Bandera", "No me gustan"};
-    const char *strMascotas[] = {"", "Muy importante", "Me da igual", "No puedo / No me gustan"};
-    const char *strVida[] = {"", "Éxito deportivo", "Formar una familia", "Éxito profesional"};
+    const char *Espiritualidad[] = {"", "Sí es importante", "No es importante", "Me es irrelevante"};
+    const char *Escuela[] = {"", "Ingeniería", "Negocios y Economía", "Ciencias", "Artes y Humanidades", "Ciencias sociales"};
+    const char *Hobby[] = {"", "Aficiones de interior", "Actividades deportivas", "Vida nocturna", "Sí a todo"};
+    const char *Personalidad[] = {"", "Introvertido", "Ambivertido", "Extrovertido"};
+    const char *Psexual[] = {"", "Chico", "Chica", "Irrelevante"};
+    const char *Genero[] = {"", "Hombre", "Mujer", "No binario"};
+    const char *Chilaquiles[] = {"", "Rojos", "Verdes", "Bandera", "No me gustan"};
+    const char *Mascotas[] = {"", "Muy importante", "Me da igual", "No puedo / No me gustan"};
+    const char *Vida[] = {"", "Éxito deportivo", "Formar una familia", "Éxito profesional"};
 
     int k;
     for (k = 0; k < totalPersonas; k++) {
@@ -82,15 +83,15 @@ void imprimirDatos(char nombres[][20], int edad[], int espiritualidad[], float a
         printf("========================================\n");
         printf(" - Edad:                 %d años\n", edad[k]);
         printf(" - Altura:               %.2f m\n", altura[k]);
-        printf(" - Género:               %s\n", strGenero[genero[k]]);
-        printf(" - Preferencia Sexual:   %s\n", strPsexual[psexual[k]]);
-        printf(" - Escuela:              %s\n", strEscuela[escuela[k]]);
-        printf(" - Personalidad:         %s\n", strPersonalidad[personalidad[k]]);
-        printf(" - Hobbies:              %s\n", strHobby[hobby[k]]);
-        printf(" - Espiritualidad:       %s\n", strEspiritualidad[espiritualidad[k]]);
-        printf(" - Chilaquiles:          %s\n", strChilaquiles[pchilaquiles[k]]);
-        printf(" - Mascotas:             %s\n", strMascotas[mascotas[k]]);
-        printf(" - Prioridad de vida:    %s\n", strVida[vida[k]]);
+        printf(" - Género:               %s\n", Genero[genero[k]]);
+        printf(" - Preferencia Sexual:   %s\n", Psexual[psexual[k]]);
+        printf(" - Escuela:              %s\n", Escuela[escuela[k]]);
+        printf(" - Personalidad:         %s\n", Personalidad[personalidad[k]]);
+        printf(" - Hobbies:              %s\n", Hobby[hobby[k]]);
+        printf(" - Espiritualidad:       %s\n", Espiritualidad[espiritualidad[k]]);
+        printf(" - Chilaquiles:          %s\n", Chilaquiles[pchilaquiles[k]]);
+        printf(" - Mascotas:             %s\n", Mascotas[mascotas[k]]);
+        printf(" - Prioridad de vida:    %s\n", Vida[vida[k]]);
         printf("========================================\n");
     }
 }
@@ -102,15 +103,15 @@ void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], float 
     int puntajes[31] = {0}; // Guardaremos los puntos de cada persona
 
     // Diccionarios para imprimir los perfiles ganadores
-    const char *strEspiritualidad[] = {"", "Sí es importante", "No es importante", "Me es irrelevante"};
-    const char *strEscuela[] = {"", "Ingeniería", "Negocios y Economía", "Ciencias", "Artes y Humanidades", "Ciencias sociales"};
-    const char *strHobby[] = {"", "Aficiones de interior", "Actividades deportivas", "Vida nocturna", "Sí a todo"};
-    const char *strPersonalidad[] = {"", "Introvertido", "Ambivertido", "Extrovertido"};
-    const char *strPsexual[] = {"", "Chico", "Chica", "Irrelevante"};
-    const char *strGenero[] = {"", "Hombre", "Mujer", "No binario"};
-    const char *strChilaquiles[] = {"", "Rojos", "Verdes", "Bandera", "No me gustan"};
-    const char *strMascotas[] = {"", "Muy importante", "Me da igual", "No puedo / No me gustan"};
-    const char *strVida[] = {"", "Éxito deportivo", "Formar una familia", "Éxito profesional"};
+    const char *Espiritualidad[] = {"", "Sí es importante", "No es importante", "Me es irrelevante"};
+    const char *Escuela[] = {"", "Ingeniería", "Negocios y Economía", "Ciencias", "Artes y Humanidades", "Ciencias sociales"};
+    const char *Hobby[] = {"", "Aficiones de interior", "Actividades deportivas", "Vida nocturna", "Sí a todo"};
+    const char *Personalidad[] = {"", "Introvertido", "Ambivertido", "Extrovertido"};
+    const char *Psexual[] = {"", "Chico", "Chica", "Irrelevante"};
+    const char *Genero[] = {"", "Hombre", "Mujer", "No binario"};
+    const char *Chilaquiles[] = {"", "Rojos", "Verdes", "Bandera", "No me gustan"};
+    const char *Mascotas[] = {"", "Muy importante", "Me da igual", "No puedo / No me gustan"};
+    const char *Vida[] = {"", "Éxito deportivo", "Formar una familia", "Éxito profesional"};
 
     // --- CAPTURA DE DATOS DEL USUARIO ---
     printf("\n--- CONFIGURA TU PERFIL ---");
@@ -184,15 +185,15 @@ void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], float 
             printf("----------------------------------------\n");
             printf(" - Edad:                 %d años\n", edad[k]);
             printf(" - Altura:               %.2f m\n", altura[k]);
-            printf(" - Género:               %s\n", strGenero[genero[k]]);
-            printf(" - Preferencia Sexual:   %s\n", strPsexual[psexual[k]]);
-            printf(" - Escuela:              %s\n", strEscuela[escuela[k]]);
-            printf(" - Personalidad:         %s\n", strPersonalidad[personalidad[k]]);
-            printf(" - Hobbies:              %s\n", strHobby[hobby[k]]);
-            printf(" - Espiritualidad:       %s\n", strEspiritualidad[espiritualidad[k]]);
-            printf(" - Chilaquiles:          %s\n", strChilaquiles[pchilaquiles[k]]);
-            printf(" - Mascotas:             %s\n", strMascotas[mascotas[k]]);
-            printf(" - Prioridad de vida:    %s\n", strVida[vida[k]]);
+            printf(" - Género:               %s\n", Genero[genero[k]]);
+            printf(" - Preferencia Sexual:   %s\n", Psexual[psexual[k]]);
+            printf(" - Escuela:              %s\n", Escuela[escuela[k]]);
+            printf(" - Personalidad:         %s\n", Personalidad[personalidad[k]]);
+            printf(" - Hobbies:              %s\n", Hobby[hobby[k]]);
+            printf(" - Espiritualidad:       %s\n", Espiritualidad[espiritualidad[k]]);
+            printf(" - Chilaquiles:          %s\n", Chilaquiles[pchilaquiles[k]]);
+            printf(" - Mascotas:             %s\n", Mascotas[mascotas[k]]);
+            printf(" - Prioridad de vida:    %s\n", Vida[vida[k]]);
             printf("----------------------------------------");
             
             puntajes[mejorIndice] = -2; // Lo descartamos para la siguiente iteración del top 3
