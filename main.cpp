@@ -2,13 +2,13 @@
 #include <stdlib.h>
 using namespace std;
 
-// Prototipo de la función
+// Prototipos
 void imprimirDatos(char nombres[][20], int edad[], int espiritualidad[], float altura[], int escuela[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int mascotas[], int vida[], int totalPersonas);
 void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], float altura[], int escuela[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int mascotas[], int vida[], int totalPersonas);
 
 int main() {
 	int opcion;
-    // 1. Nombres (Aumenté el tamaño a 20 para evitar desbordamientos de nombres largos)
+    // 1. Nombres 
     char nombres[][20] = {"Camila","Dani","Fernanda","Ricardo","Valentina","Angel","Carolina","Emiliano O","Sara","Ashley","Emiliano S","Irwing","Luis","Daniela","Alondra","Luis","Hannah","Aimeé","Hana","Fernanda","Fernanda","Emmanuel","Edwin","Elihu","Amanda","Omar","Elizabeth","Nancy","LuiZ Paulo","Iker","Emilio"};
     // 2. Edad
     int edad[] = {18,20,19,21,21,19,19,21,18,18,21,26,16,18,18,24,24,18,18,18,18,19,26,23,19,20,18,23,23,21,22};
@@ -20,25 +20,25 @@ int main() {
     int escuela[] = {1,3,3,1,4,1,5,4,4,1,1,2,5,4,4,3,2,4,2,2,2,1,4,5,3,1,5,3,1,1,2};
     // 6. Hobby
     int hobby[] = {2,4,3,2,1,1,4,4,1,1,4,1,2,1,4,4,2,3,1,1,4,1,4,2,4,2,3,3,4,4,2};
-    // 7. Personalidad (Convertido a enteros: Intro=1, Ambi=2, Extro=3)
+    // 7. Personalidad ( Intro=1, Ambi=2, Extro=3)
     int personalidad[] = {2,1,2,2,1,3,2,1,2,2,1,1,2,2,2,2,2,1,2,3,3,1,2,2,2,2,1,2,3,3,1};
-    // 8. Preferencia Sexual (Arreglado el error de sintaxis '{1,};')
+    // 8. Preferencia Sexual 
     int psexual[] = {1,1,1,2,3,2,1,2,1,1,2,2,1,1,1,2,1,3,1,1,1,3,1,1,1,2,1,1,2,2,2};
     // 9. Género
     int genero[] = {2,2,2,1,2,1,2,1,2,2,1,1,1,2,2,1,2,2,2,1,2,1,3,1,2,1,2,2,1,1,1};
-    // 10. Chilaquiles (Convertido a enteros: Rojos=1, Verdes=2, Bandera=3, No gustan=4)
+    // 10. Chilaquiles (Rojos=1, Verdes=2, Bandera=3, No gustan=4)
     int pchilaquiles[] = {2,1,2,2,2,2,2,2,1,1,2,1,2,1,1,2,3,2,2,2,2,2,1,1,4,2,2,2,3,1,1};
     // 11. Importancia de Mascotas
     int mascotas[] = {1,2,1,2,1,1,1,1,1,2,2,1,1,1,2,1,1,1,1,2,2,3,1,2,2,1,2,2,1,2,2};
     // 12. Prototipo de Vida
     int vida[] = {2,3,3,3,2,2,3,2,2,3,2,2,3,3,2,3,3,3,3,3,3,3,1,3,3,2,3,2,2,1,1};
 
-    // Calculamos dinámicamente el número de personas (31)
+    // Calculamos el número de personas (31)
     int totalPersonas = sizeof(edad) / sizeof(edad[0]);
         
         do {	
-        	printf("\n\n1) Impresion de tabla de datos");
-        	printf("\n2)  Busca mi match ideal");
+        	printf("\n\n1) Imprimir todos los candidatos");
+        	printf("\n2) Busca mi match ideal");
         	printf("\n3) Salir");
         	printf("\n Elige la opcion que desees ver ");
         	scanf("%d",&opcion);
@@ -65,7 +65,7 @@ int main() {
 void imprimirDatos(char nombres[][20], int edad[], int espiritualidad[], float altura[], int escuela[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int mascotas[], int vida[], int totalPersonas) {
     
     // Diccionarios: Estos arreglos mapean el número (índice) a la palabra correspondiente.
-    // El índice 0 está vacío ("") porque tus opciones empiezan desde el 1.
+    // El índice 0 está vacío ("") porque las opciones empiezan desde el 1.
     const char *Espiritualidad[] = {"", "Sí es importante", "No es importante", "Me es irrelevante"};
     const char *Escuela[] = {"", "Ingeniería", "Negocios y Economía", "Ciencias", "Artes y Humanidades", "Ciencias sociales"};
     const char *Hobby[] = {"", "Aficiones de interior", "Actividades deportivas", "Vida nocturna", "Sí a todo"};
@@ -75,7 +75,8 @@ void imprimirDatos(char nombres[][20], int edad[], int espiritualidad[], float a
     const char *Chilaquiles[] = {"", "Rojos", "Verdes", "Bandera", "No me gustan"};
     const char *Mascotas[] = {"", "Muy importante", "Me da igual", "No puedo / No me gustan"};
     const char *Vida[] = {"", "Éxito deportivo", "Formar una familia", "Éxito profesional"};
-
+	
+	//Impresión de cada perfil
     int k;
     for (k = 0; k < totalPersonas; k++) {
         printf("\n========================================\n");
@@ -96,7 +97,6 @@ void imprimirDatos(char nombres[][20], int edad[], int espiritualidad[], float a
     }
 }
 
-//Función de match
 //Función de match
 void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], float altura[], int escuela[], int hobby[], int personalidad[], int psexual[], int genero[], int pchilaquiles[], int mascotas[], int vida[], int totalPersonas) {
     int uGenero, uBusca, uEdadMin, uEdadMax, uEspiritu, uHobby, uPerso, uChila, uVida, uMascotas;
