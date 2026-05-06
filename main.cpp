@@ -158,12 +158,12 @@ void algoritmoMatch(char nombres[][20], int edad[], int espiritualidad[], float 
         }
     }
 
-    // --- BUSCAR Y MOSTRAR LOS 3 MEJORES ---
+    // --- BUSCAR Y MOSTRAR LOS 5 MEJORES ---
     printf("\n========================================");
-    printf("\n        TUS 3 MEJORES MATCHES           ");
+    printf("\n        TUS 5 MEJORES MATCHES           ");
     printf("\n========================================");
     
-    for (int top = 0; top < 3; top++) {
+    for (int top = 0; top < 5; top++) {
         int maxPuntos = -1;
         int mejorIndice = -1;
 
